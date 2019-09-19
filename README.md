@@ -1,12 +1,14 @@
 # FLO-Shared-Secret
-This app let you save encrypted secret in the FLO blockchain and produces a number of keys that must be combined to be able to decrypt the secret.
-A shared secret is a way of splitting a secret into n in keys such that m out of n keys are required to decrypt the message.  Built using Shamir's shared secret algorithm, this app stores the encrypted secret message on blockchain and splits the key into n shares and any of the m share holders can decrypt the message.
-Storing secrets on the blockchain makes sure that the file can't be altered and is accessible from anywhere.Also allowing us to use shared secret algorithm for large  messages.
+This app allows you to encrypt, store, and decode a secret on the FLO blockchain. 
+
+In cryptographic terms, a "shared secret" is a secure piece of data known only to a trusted group of individuals. The secret can be a password, a passphrase, a large number, or a collection of randomly chosen bytes. The secret is encrypted by splitting it into a set number of keys ("n") that can distributed to a group of keyholders ("m"). The keyholders can then recombine the keys to decrypt the secret.
+
+Built using Shamir's Secret Sharing algorithm, this app stores the encrypted secret message on the FLO blockchain and splits it into keys which can be distributed and recombined to decrypt the secret. The secret can be as large as 1040 bytes. Once stored to the FLO Blockchain, the secret cannot be altered and it is accessible from anywhere.
 
 ## Requirements
-1. linux operating system(working on a cross platform version).
-2. You need to run a full flo-qt wallet to run it. Download it from here https://github.com/floblockchain/flo
-3. Some amount of FLO if you want to post a secret
+1. Linux operating system (working on a cross platform version).
+2. You need to run a full flo-qt wallet to use the app. Download it from here https://github.com/floblockchain/flo
+3. FLO cryptocurrenty to create the tranaction on the FLO Blockchain
 
 **WARNING: Currently the app is using the testnet**
 
@@ -14,17 +16,17 @@ Storing secrets on the blockchain makes sure that the file can't be altered and 
 1. Clone/download this repository. (https://github.com/akhil2015/FLO-shared-secret/)
 2. Run the binary file. (FLO_Secret)
 
-**To create a shared-secret**
+**To create the Shared-Secret**
 
-3. click on POST to create a new shared secret message 
-4. You will get a pdf containing your Secret ID and the shares of the keys used to encrypt it.
-5. It is a good practise to destroy the pdf once the shares have been distributed.
+1. click on POST to create a new Shared Secret message 
+2. You will get a pdf containing your Secret ID and the shares of the keys used to encrypt it.
+3. You should destroy the pdf once the shares have been distributed.
 
-**To read a shared secret**
+**To read the Shared Secret**
 
-3. Click on GET to read the message.
-4. Enter the Secret ID and shares of the keys and your are done
-5. You should get a screen with the secret message displayed there.
+1. Click on GET to read the message.
+2. Enter the Secret ID and shares of the keys
+3. You should get a screen with the secret message displayed there.
 
 ## Source code
 For Source code of the App is main.py
